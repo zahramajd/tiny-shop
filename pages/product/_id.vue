@@ -40,6 +40,7 @@
             <b-img :src="'/photos/' + product._id + '.jpg'" rounded="circle"  width="275" height="275" alt="img" class="m-1" />
         <p class="card-text" >
            {{product.text}}
+           <br>
            {{product.description}}
         </p>
         </b-card>

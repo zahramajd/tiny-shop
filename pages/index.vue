@@ -34,6 +34,14 @@
 
   </b-collapse>
 </b-navbar>
+ <b-card class="text-center"  img-src="/photos/handicraft.jpg"
+                img-alt="Card image"
+                img-top
+                >
+            <p class="card-text"><b-badge variant="info">
+                در این سامانه می توانید صنایع دستی تولیدی خود را به فروش برسانید و همچنین صنایع دستی مورد علاقه تان را بهترین قیمت خریداری کنید.
+            </b-badge></p>
+        </b-card>
 <b-container  class="p-4">
   <b-card-group deck class="mb-3">
     <div v-for="p in products" :key=" p._id ">
@@ -48,7 +56,8 @@
           <p class="card-text">
           {{p.text}}
           </p>
-        <b-button :to="'/product/' +p._id" variant="primary">خرید</b-button>
+        <b-button :to="'/product/' +p._id" variant="primary">جزییات</b-button>
+        <b-button variant="outline-primary">{{p.price}}</b-button>
       </b-card>
   </div>
 </b-card-group>
