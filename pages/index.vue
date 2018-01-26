@@ -43,8 +43,9 @@
 <b-container  class="p-4">
   <b-card-group deck class="mb-3">
     <div v-for="p in products" :key=" p._id ">
-        <b-card  title="p.name"
-          img-src="https://lorempixel.com/600/300/food/5/"
+        <b-card  
+          :title='p.name'
+          :img-src='p.img'
           img-alt="Image"
           img-top
           tag="article"
@@ -53,11 +54,12 @@
           <p class="card-text">
           {{p.text}}
           </p>
-        <b-button href="#" variant="primary">Go somewhere</b-button>
+        <b-button href="#" variant="primary">خرید</b-button>
       </b-card>
   </div>
 </b-card-group>
 </b-container>
+
 </div>
 </template>
 
