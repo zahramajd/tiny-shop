@@ -1,6 +1,6 @@
 <template>
-<div>
-<b-navbar toggleable="md" type="dark" variant="info">
+    <div>
+        <b-navbar toggleable="md" type="dark" variant="info">
 
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -34,27 +34,17 @@
 
   </b-collapse>
 </b-navbar>
-<b-container  class="p-4">
-  <b-card-group deck class="mb-3">
-    <div v-for="p in products" :key=" p._id ">
-        <b-card  
-          :title='p.name'
-          :img-src="'/photos/' + p._id + '.jpg'"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-          <p class="card-text">
-          {{p.text}}
-          </p>
-        <b-button :to="'/product/' +p._id" variant="primary">خرید</b-button>
-      </b-card>
-  </div>
-</b-card-group>
+<b-container>
+  <br>
+        <b-card class="mx-auto text-center" :title=product.name >
+            <b-img :src="'/photos/' + product._id + '.jpg'" rounded="circle"  width="275" height="275" alt="img" class="m-1" />
+        <p class="card-text" >
+           {{product.text}}
+           {{product.description}}
+        </p>
+        </b-card>
 </b-container>
-
-</div>
+    </div>
 </template>
 
 <script>
@@ -63,8 +53,8 @@ export default {
 
     data() {
         return {
-            products: products
-            
+            products: products,
+            product: products[this.$route.params.id -1]
         }
     }
 
